@@ -1,0 +1,10 @@
+<%= form_with model: @ware_content do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.fields_for :ware_photos do |i| %>
+    <%= i.file_field :image %>
+  <% end %>
+  <%= f.submit "投稿", class: "btn btn-primary" %>
+<% end %>
